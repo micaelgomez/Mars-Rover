@@ -20,3 +20,18 @@ Requirements
   * npm install 
   * npm start
 
+### Stack
+ * Node. js + express + Postman
+ * Ho usato Postman per fare le request 
+
+### Executing program
+
+``` 
+{
+    "location" : [1,1],             // Default [0,0]
+    "direction": "W",               // Default "N"
+    "grid" : [10,10]                // Default [100,100]
+    "obstacles": [[3,0]],           // Default []
+    "command": "fff"                //Required
+}
+```
