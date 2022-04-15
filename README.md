@@ -32,6 +32,6 @@ Requirements
     "direction": "W",               // Default "N"
     "grid" : [10,10]                // Default [100,100]
     "obstacles": [[3,0]],           // Default []
-    "command": "fff"                //Required
+    "command": "rlfb"                //Required
 }
 ```
