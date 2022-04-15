@@ -26,12 +26,19 @@ Requirements
 
 ### Executing program
 
+ #### Request
+ GET  http://localhost:8080/api/controls
+ 
 ``` 
 {
     "location" : [1,1],             // Default [0,0]
     "direction": "W",               // Default "N"
-    "grid" : [10,10]                // Default [100,100]
+    "grid" : [10,10],                // Default [100,100]
     "obstacles": [[3,0]],           // Default []
     "command": "rlfb"                //Required
 }
+```
+ #### Response
+``` 
+New rover position:[1,1]. Direction: W. Status: ok
 ```
