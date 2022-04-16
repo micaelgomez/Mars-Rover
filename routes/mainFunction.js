@@ -1,4 +1,4 @@
-const { turnLeft, turnRight, move, resetLocation } = require("./controls");
+const { turnLeft, turnRight, movement, resetLocation } = require("./controls");
 
 const mainFunction = (location, direction, grid, command, obstacles) => {
   //Rover Data
@@ -12,28 +12,36 @@ const mainFunction = (location, direction, grid, command, obstacles) => {
 
   // Execution
   for (let i = 0; i < command.length; i++) {
-    switch (command.charAt(i)) {
-      case "r":
-        turnRight(rover);
-        break;
+    if (rover.status === "ok") {
+      switch (command.charAt(i)) {
+        case "r":
+          turnRight(rover);
+          break;
 
-      case "l":
-        turnLeft(rover);
-        break;
+        case "l":
+          turnLeft(rover);
+          break;
 
-      case "f":
-        if (!move(rover)) break;
-        break;
+        case "f":
+          if (!movement(rover)) break;
+          break;
 
-      case "b":
-        if (!move(rover, "b")) break;
-        break;
+        case "b":
+          if (!movement(rover, "b")) break;
+          break;
+      }
     }
     resetLocation(rover);
   }
 
   // return rover position
-  return `New rover position:[${rover.location[0]},${rover.location[1]}]. Direction: ${rover.direction}. Status: ${rover.status}  `;
+  return `New rover location:[${rover.location[0]},${rover.location[1]}]. 
+  Direction: ${rover.direction}. 
+  Grid: [${rover.grid}]. 
+  Obstacles: [ ${rover.obstacles.map((e) => {
+    return `[${e}]`;
+  })} ]. 
+  Status: ${rover.status} `;
 };
 
 module.exports = {

@@ -34,7 +34,8 @@ const turnRight = (rover) => {
   }
 };
 
-const move = (rover, b) => {
+const movement = (rover, b) => {
+  console.log("Move was called!");
   let moveBackward = b ? b : "f";
   let xIncrease = 0;
   let yIncrease = 0;
@@ -75,11 +76,13 @@ const move = (rover, b) => {
 const isObstacle = (newLocation, rover) => {
   for (let i = 0; i < rover.obstacles.length; i++) {
     if (newLocation.toString() == rover.obstacles[i].toString()) {
+      console.log("obstacle!");
       rover.status = "obstacle";
       return true;
     }
-    return false;
   }
+
+  return false;
 };
 
 const resetLocation = (rover) => {
@@ -92,6 +95,6 @@ const resetLocation = (rover) => {
 module.exports = {
   turnLeft,
   turnRight,
-  move,
+  movement,
   resetLocation,
 };
