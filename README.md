@@ -31,14 +31,21 @@ Requirements
  
 ``` 
 {
-    "location" : [1,1],             // Default [0,0]
-    "direction": "W",               // Default "N"
-    "grid" : [10,10],                // Default [100,100]
-    "obstacles": [[3,0]],           // Default []
-    "command": "rlfb"                //Required
+    "location": [0,0],              // Default [0,0]
+    "direction" : "E",              // Default "N"
+    "grid": [100,100],               // Default  [100,100]   
+    "obstacles" : [[5,1],[3,0]],    
+    "command": "ffflbbr"            //Required
 }
+
 ```
  #### Response
 ``` 
-New rover position:[1,1]. Direction: W. Status: ok
+New rover location:[2,0].
+Direction: E.
+Grid: [100,100].
+Obstacles: [ [5,1],[3,0] ].
+Status: obstacle
+
+
 ```
